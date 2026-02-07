@@ -23,7 +23,7 @@ with open("project_twitter_data.csv", "r") as infile: # öppnar csv-filen
         result_data.append([retweets, replies, positive_score, negative_score, net_score]) # Lägger in en ny rad i din resultatlista. Du sparar en lista med exakt de värden du vill ha i output-filen. Exempel: [3, 1, 2, 0, 2]
 
 # skriv resultatet till ny csv-fil
-with open("resulting_data.csv", "w", newline='') as outfile: # newline='' är viktigt i Windows för att undvika tomma rader mellan raderna i CSV.
+with open("project_twitter_data.csv", "w", newline='') as outfile: # newline='' är viktigt i Windows för att undvika tomma rader mellan raderna i CSV.
     writer = csv.writer(outfile) # Skapar en csv-skrivare som kan skriva rader till filen.
     writer.writerow(["Number of Retweets", "Number of Replies", "Positive Score", "Negative Score", "Net Score"]) #  Skriver första raden i outputfilen = rubrikerna. Den raden blir kolumnnamnen i den nya CSV-filen.
     writer.writerows(result_data) # Skriver alla rader från result_data till filen, en per tweet. writerows betyder “skriv många rader”.
